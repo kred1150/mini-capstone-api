@@ -1,10 +1,10 @@
 class ProductsController < ApplicationController
-  def get_all_products
-    all_products = Product.all
-    render json: all_products.as_json
+  def index
+    products = Product.all
+    render json: products.as_json
   end
 
-  def one_product
+  def show
     product = Product.find_by(id: params["id"])
     if product == nil
       redirect_to "/non_existent_product"
