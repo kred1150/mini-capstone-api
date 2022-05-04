@@ -6,6 +6,14 @@ class ProductsController < ApplicationController
 
   def one_product
     product = Product.find_by(id: params["id"])
-    render json: product.as_json
+    if product == nil
+      redirect_to "/non_existent_product"
+    else
+      render json: product.as_json
+    end
+  end
+
+  def non_existent
+    render json: "Product Does Not Exist"
   end
 end

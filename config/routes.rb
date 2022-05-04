@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "/products_all", controller: "products", action: "get_all_products"
   get "/one_product/:id" => "products#one_product"
+  get "/non_existent_product" => "products#non_existent"
 end
