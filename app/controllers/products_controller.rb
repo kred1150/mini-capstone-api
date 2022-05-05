@@ -35,6 +35,12 @@ class ProductsController < ApplicationController
     render json: product.as_json
   end
 
+  def destroy
+    product = Product.find_by(id: params["id"])
+    product.destroy
+    render json: { message: "You have successfuly deleted this product!" }
+  end
+
   def non_existent
     render json: "Product Does Not Exist"
   end
