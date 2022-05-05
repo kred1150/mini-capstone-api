@@ -1,3 +1,14 @@
-### Recipes Index
+### Products Index
 Get http://localhost:3000/products.json
+
+### Product Create
+POST http://localhost:3000/products.json
+Content-Type: application/json
+
+{
+  "name": "Lawn Chair",
+  "price": 25,
+  "image_url": "https://m.media-amazon.com/images/I/71X8adLx6oL._AC_UL320_.jpg",
+  "description": "Coleman Mesh Quad Camping Chair, Red"
+}
 

@@ -15,10 +15,10 @@ class ProductsController < ApplicationController
 
   def create
     new_product = Product.new(
-      name: "Pillow",
-      price: 65,
-      image_url: "https://m.media-amazon.com/images/I/31dfLUZeigL._AC_SL1024_.jpg",
-      description: "Casper Sleep Pillow, Stadard, White",
+      name: params["name"],
+      price: params["price"],
+      image_url: params["image_url"],
+      description: params["description"],
     )
     new_product.save
     render json: new_product.as_json
