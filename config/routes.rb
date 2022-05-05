@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "/products" => "products#index"
   get "/products/:id" => "products#show"
+  post "/products" => "products#create"
   get "/non_existent_product" => "products#non_existent"
 end
