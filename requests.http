@@ -12,3 +12,11 @@ Content-Type: application/json
   "description": "Coleman Mesh Quad Camping Chair, Red"
 }
 
+### Product Update
+PATCH http://localhost:3000/products/2
+Content-Type: application/json
+
+{
+  "price": 8
+}
+
