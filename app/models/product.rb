@@ -10,4 +10,9 @@ class Product < ApplicationRecord
       return false
     end
   end
+
+  def tax
+    tax = price.to_f * 0.09
+    return tax
+  end
 end
