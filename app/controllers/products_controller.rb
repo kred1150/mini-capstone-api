@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     products = Product.all
-    render json: products.as_json(methods: [:friendly_created_at])
+    render json: products.as_json(methods: [:friendly_created_at, :is_discounted?])
   end
 
   def show
@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
     if product == nil
       redirect_to "/non_existent_product"
     else
-      render json: product.as_json(methods: [:friendly_created_at])
+      render json: product.as_json(methods: [:friendly_created_at, :is_discounted?])
     end
   end
 
@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
       description: params["description"],
     )
     product.save
-    render json: product.as_json(methods: [:friendly_created_at])
+    render json: product.as_json(methods: [:friendly_created_at, :is_discounted?])
   end
 
   def update
@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
     product.description = params["description"] || product.description
     product.save
 
-    render json: product.as_json(methods: [:friendly_created_at])
+    render json: product.as_json(methods: [:friendly_created_at, :is_discounted?])
   end
 
   def destroy
