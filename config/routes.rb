@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   post "/products" => "products#create"
   patch "/products/:id" => "products#update"
   delete "products/:id" => "products#destroy"
-  get "/non_existent_product" => "products#non_existent"
+
+  get "/suppliers" => "suppliers#index"
+  get "/suppliers/:id" => "suppliers#show"
+  post "/suppliers" => "suppliers#create"
+  patch "/suppliers/:id" => "suppliers#update"
 end

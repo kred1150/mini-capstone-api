@@ -24,3 +24,9 @@ Content-Type: application/json
   "supplier_id": 2
 }
 
+### Supplier Index
+Get http://localhost:3000/suppliers.json
+
+### Show Supplier
+Get http://localhost:3000/suppliers/2.json
+
