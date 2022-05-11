@@ -20,7 +20,7 @@ PATCH http://localhost:3000/products/2.json
 Content-Type: application/json
 
 {
-  "price": 8,
+  "price": 9,
   "supplier_id": 2
 }
 
@@ -30,3 +30,5 @@ Get http://localhost:3000/suppliers.json
 ### Show Supplier
 Get http://localhost:3000/suppliers/2.json
 
+### Show Image
+Get http://localhost:3000/images/2.json

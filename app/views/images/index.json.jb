@@ -1,0 +1,9 @@
+@images.map do |image|
+  {
+    id: image.id,
+    url: image.url,
+    product: image.product,
+    created_at: image.created_at,
+    updated_at: image.updated_at
+  }
+end
