@@ -30,5 +30,18 @@ Get http://localhost:3000/suppliers.json
 ### Show Supplier
 Get http://localhost:3000/suppliers/2.json
 
+### Image Index
+Get http://localhost:3000/images.json
+
 ### Show Image
-Get http://localhost:3000/images/2.json
+Get http://localhost:3000/images/3.json
+
+### Create an Image
+Post http://localhost:3000/images.json
+Content-Type: application/json
+
+{
+  "url": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/bca8639ba25a427aac93ab8401878390_9366/Athletic_Cushioned_Quarter_Socks_6_Pairs_XL_Black_B93227_03_standard.jpg",
+  "product_id": 3
+}
+
