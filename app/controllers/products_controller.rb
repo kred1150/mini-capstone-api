@@ -17,6 +17,10 @@ class ProductsController < ApplicationController
       supplier_id: params["supplier_id"],
     )
     if @product.save
+      Image.create(
+        url: params["image_url"],
+        product_id: @product.id,
+      )
       render template: "products/show"
     else
       render json: { errors: @product.errors.full_messages }, status: 422
@@ -41,9 +45,5 @@ class ProductsController < ApplicationController
     product = Product.find_by(id: params["id"])
     product.destroy
     render json: { message: "You have successfuly deleted this product!" }
-  end
-
-  def non_existent
-    render json: "Product Does Not Exist"
   end
 end
