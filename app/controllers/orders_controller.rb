@@ -17,12 +17,20 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find_by(id: params["id"])
-    render json: @order.as_json
+    if @order.user_id == current_user.id
+      render json: @order.as_json
+    else
+      render json: { messages: "You are not the user of this order!" }
+    end
   end
 
   def index
     @order = Order.all
-    render json: @order.as_json
+    if @order.user_id == current_user.id
+      render json: @order.as_json
+    else
+      render json: { messages: "You are not the user of this order!" }
+    end
   end
 
   def update
