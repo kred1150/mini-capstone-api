@@ -77,3 +77,20 @@ Content-Type: application/json
   "tax": 3.6,
   "total": 43.6
 }
+
+### Update an Order
+patch http://localhost:3000/orders/1.json
+Content-Type: application/json
+
+{
+  "quantity": 3,
+  "subtotal": 60,
+  "tax": 5.4,
+  "total": 65.4
+}
+
+### Show an Order
+Get http://localhost:3000/orders/1.json
+
+### Index all Orders
+Get http://localhost:3000/orders.json
