@@ -4,9 +4,9 @@ class OrdersController < ApplicationController
       user_id: current_user.id,
       product_id: params["product_id"],
       quantity: params["quantity"],
-      subtotal: params["subtotal"],
-      tax: params["tax"],
-      total: params["total"],
+      subtotal: Product.find_by(id: params["product_id"]).price * params["quantity"],
+      tax: Product.find_by(id: params["product_id"]).tax * params["quantity"],
+      total: (Product.find_by(id: params["product_id"]).price + Product.find_by(id: params["product_id"]).tax) * params["quantity"],
     )
     if @order.save
       render json: @order.as_json

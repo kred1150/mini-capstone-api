@@ -72,10 +72,7 @@ Content-Type: application/json
 
 {
   "product_id": 1,
-  "quantity": 2,
-  "subtotal": 26,
-  "tax": 2.34,
-  "total": 28.34
+  "quantity": 3
 }
 
 ### Update an Order
