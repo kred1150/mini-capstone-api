@@ -6,6 +6,7 @@ GET http://localhost:3000/products/2.json
 
 ### Product Create
 POST http://localhost:3000/products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI4MzEyMTR9.VYhCNOROHNrrllTb0XKX1mh_rgkI_AH-A32lweeLfWo"
 Content-Type: application/json
 
 {
@@ -61,13 +62,13 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "kevin@test.com",
+  "email": "test@test.com",
   "password": "password"
 }
 
 ### Create an Order
 post http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI3MTI5Nzh9.a9E-T9UzmtYGDAzxnXxBIoNE0vI54c-23nngPtnNS1c"
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI4MzEyMTR9.VYhCNOROHNrrllTb0XKX1mh_rgkI_AH-A32lweeLfWo"
 Content-Type: application/json
 
 {

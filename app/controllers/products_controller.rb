@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :sho]
+
   def index
     @products = Product.all
     render template: "products/index"
