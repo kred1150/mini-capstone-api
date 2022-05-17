@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI4MzEyMTR9.VYhCNOROHNrrllTb0XKX1mh_rgkI_AH-A32lweeLfWo
+
 ### Products Index
 Get http://localhost:3000/products.json
 
@@ -6,7 +8,7 @@ GET http://localhost:3000/products/2.json
 
 ### Product Create
 POST http://localhost:3000/products.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI4MzEyMTR9.VYhCNOROHNrrllTb0XKX1mh_rgkI_AH-A32lweeLfWo"
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
@@ -68,7 +70,7 @@ Content-Type: application/json
 
 ### Create an Order
 post http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI4MzEyMTR9.VYhCNOROHNrrllTb0XKX1mh_rgkI_AH-A32lweeLfWo"
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
@@ -89,10 +91,10 @@ Content-Type: application/json
 
 ### Show an Order
 Get http://localhost:3000/orders/1.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NTI3MTQ0MzJ9.8o3jYJN5nLuLKRYqs9k6I6V-jKuwJpQLjvpDE0GxGys"
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 ### Index all Orders
 Get http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NTI3MTQ0MzJ9.8o3jYJN5nLuLKRYqs9k6I6V-jKuwJpQLjvpDE0GxGys"
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
