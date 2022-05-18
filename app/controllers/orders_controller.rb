@@ -2,13 +2,15 @@ class OrdersController < ApplicationController
   before_action :authenticate_user
 
   def create
+    price = 0
+    CartedProduct.where(order_id: nil).where(status: "carted").each do |product|
+      price = price + product.product.price
+    end
     @order = Order.new(
       user_id: current_user.id,
-      product_id: params["product_id"],
-      quantity: params["quantity"],
-      subtotal: Product.find_by(id: params["product_id"]).price * params["quantity"].to_i,
-      tax: Product.find_by(id: params["product_id"]).tax * params["quantity"].to_i,
-      total: (Product.find_by(id: params["product_id"]).price + Product.find_by(id: params["product_id"]).tax) * params["quantity"].to_i,
+      subtotal: price,
+      tax: price * 0.09,
+      total: price + (price * 0.09),
     )
     if @order.save
       render json: @order.as_json
