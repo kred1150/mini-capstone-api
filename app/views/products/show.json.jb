@@ -3,6 +3,7 @@
   name: @product.name,
   price: @product.price,
   description: @product.description,
+  categories: @product.categories,
   images: @product.images,
   supplier_id: @product.supplier_id,
   supplier: @product.supplier,
