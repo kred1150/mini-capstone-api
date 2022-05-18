@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user
-  
+
   def create
     @order = Order.new(
       user_id: current_user.id,
@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = current_user.orders.find_by(id: params["id"]
+    @order = current_user.orders.find_by(id: params["id"])
     render json: @order.as_json
   end
 

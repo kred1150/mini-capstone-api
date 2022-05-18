@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI4MzEyMTR9.VYhCNOROHNrrllTb0XKX1mh_rgkI_AH-A32lweeLfWo
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NTI5OTM0MDB9.fcimAfkJxS5V9uOp-ziWxvyq_7ysmAfAhH6J5oDLzM8
 
 ### Products Index
 Get http://localhost:3000/products.json
@@ -64,7 +64,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "kevin@test.com",
   "password": "password"
 }
 
@@ -96,5 +96,20 @@ Content-Type: application/json
 
 ### Index all Orders
 Get http://localhost:3000/orders.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+### Carted_Product Create
+POST http://localhost:3000/carted_products.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "product_id": 2,
+  "quantity": 3
+}
+
+### Index all CartedProducts
+Get http://localhost:3000/carted_products.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
