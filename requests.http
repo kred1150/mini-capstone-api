@@ -81,10 +81,7 @@ patch http://localhost:3000/orders/1.json
 Content-Type: application/json
 
 {
-  "quantity": 3,
-  "subtotal": 60,
-  "tax": 5.4,
-  "total": 65.4
+  "quantity": 3
 }
 
 ### Show an Order
@@ -103,8 +100,8 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "product_id": 2,
-  "quantity": 3
+  "product_id": 1,
+  "quantity": 1
 }
 
 ### Index all CartedProducts
@@ -112,7 +109,7 @@ Get http://localhost:3000/carted_products.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
-### Update an Order
+### Update a CartedProduct 
 patch http://localhost:3000/carted_products/3.json
 Content-Type: application/json
 
