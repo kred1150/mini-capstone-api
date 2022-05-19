@@ -100,7 +100,7 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "product_id": 2,
+  "product_id": 4,
   "quantity": 5
 }
 
@@ -118,6 +118,6 @@ Content-Type: application/json
 }
 
 ### Delete CartedProducts
-delete http://localhost:3000/carted_products.json
+delete http://localhost:3000/carted_products/14.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json

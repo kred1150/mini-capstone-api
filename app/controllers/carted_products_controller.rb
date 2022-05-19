@@ -31,10 +31,14 @@ class CartedProductsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @carted_product = CartedProduct.find_by(id: params["id"], user_id: current_user.id, status: "carted")
-  #   @carted_product.status = "removed"
-  #   @carted_product.save
-  #   render json: { message: "Carted product(s) successfully removed!" }
-  # end
+  def destroy
+    @carted_product = CartedProduct.find_by(id: params[:id], user_id: current_user.id, status: "carted")
+    if @carted_product
+      @carted_product.status = "removed"
+      @carted_product.save
+      render json: { message: "Carted product successfully destroyed!" }
+    else
+      render json: { message: "Invalid request" }, status: 422
+    end
+  end
 end
