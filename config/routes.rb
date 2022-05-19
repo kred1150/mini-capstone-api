@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "/products/:id" => "products#show"
   post "/products" => "products#create"
   patch "/products/:id" => "products#update"
-  delete "products/:id" => "products#destroy"
+  delete "/products/:id" => "products#destroy"
 
   get "/suppliers" => "suppliers#index"
   get "/suppliers/:id" => "suppliers#show"
@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   get "/carted_products" => "carted_products#index"
   post "/carted_products" => "carted_products#create"
   patch "/carted_products/:id" => "carted_products#update"
+  delete "/carted_products" => "carted_products#destroy"
 end

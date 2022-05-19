@@ -2,13 +2,15 @@ class OrdersController < ApplicationController
   before_action :authenticate_user
 
   def create
+    shopping_cart = CartedProduct.where(order_id: nil).where(status: "carted")
     @order = Order.new(
       user_id: current_user.id,
-      subtotal: Order.price_of_cart,
-      tax: Order.price_of_cart * 0.09,
-      total: Order.price_of_cart * 1.09,
+      subtotal: Order.price_of_cart(shopping_cart),
+      tax: Order.tax_of_cart,
+      total: Order.total_cart,
     )
     if @order.save
+      CartedProduct.update_cart(shopping_cart)
       render json: @order.as_json
     else
       render json: { errors: @order.errors.full_messages }

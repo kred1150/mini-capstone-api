@@ -15,12 +15,7 @@ class CartedProductsController < ApplicationController
   end
 
   def index
-    @carted_products = []
-    current_user.carted_products.each do |product|
-      if current_user.id == product["user_id"] && product["status"] == "carted"
-        @carted_products << product
-      end
-    end
+    @carted_products = CartedProduct.where(user_id: current_user.id).where(status: "carted")
     render json: @carted_products.as_json
   end
 
@@ -35,4 +30,11 @@ class CartedProductsController < ApplicationController
       render json: { errors: @carted_product.errors.full_messages }
     end
   end
+
+  # def destroy
+  #   @carted_product = CartedProduct.find_by(id: params["id"], user_id: current_user.id, status: "carted")
+  #   @carted_product.status = "removed"
+  #   @carted_product.save
+  #   render json: { message: "Carted product(s) successfully removed!" }
+  # end
 end
