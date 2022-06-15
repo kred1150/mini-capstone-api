@@ -1,13 +1,14 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NTMwMDE2OTR9.bZosz-jWUXPhVq1CrdUlIrIcjSUGGXJi7VH7B1iQvTY
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NTUzMzc4ODF9.rgx4nmzPZQS-K3M5AmPEzUpR6JoTCFoBlbnb4y_gE6g
+@host = http://localhost:3000
 
 ### Products Index
-Get http://localhost:3000/products.json
+Get {{host}}/products.json
 
 ### Show Product
-GET http://localhost:3000/products/2.json
+GET {{host}}/products/2.json
 
 ### Product Create
-POST http://localhost:3000/products.json
+POST {{host}}/products.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
@@ -19,28 +20,30 @@ Content-Type: application/json
 }
 
 ### Product Update
-PATCH http://localhost:3000/products/2.json
+PATCH {{host}}/products/2.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "price": 9,
+  "price": 10,
   "supplier_id": 2
 }
 
 ### Supplier Index
-Get http://localhost:3000/suppliers.json
+Get {{host}}/suppliers.json
 
 ### Show Supplier
-Get http://localhost:3000/suppliers/2.json
+Get {{host}}/suppliers/2.json
 
 ### Image Index
-Get http://localhost:3000/images.json
+Get {{host}}/images.json
 
 ### Show Image
-Get http://localhost:3000/images/3.json
+Get {{host}}/images/3.json
 
 ### Create an Image
-Post http://localhost:3000/images.json
+Post {{host}}/images.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
@@ -49,18 +52,18 @@ Content-Type: application/json
 }
 
 ### Create a User (signup)
-Post http://localhost:3000/users.json
+Post {{host}}/users.json
 Content-Type: application/json
 
 {
-  "name": "kevin",
-  "email": "kevin@test.com",
+  "name": "test",
+  "email": "test@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
 
 ### Sessions create (login)
-POST http://localhost:3000/sessions.json
+POST {{host}}/sessions.json
 Content-Type: application/json
 
 {
@@ -69,7 +72,7 @@ Content-Type: application/json
 }
 
 ### Create an Order
-post http://localhost:3000/orders.json
+post {{host}}/orders.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
@@ -77,7 +80,7 @@ Content-Type: application/json
 }
 
 ### Update an Order
-patch http://localhost:3000/orders/1.json
+patch {{host}}/orders/1.json
 Content-Type: application/json
 
 {
@@ -85,17 +88,17 @@ Content-Type: application/json
 }
 
 ### Show an Order
-Get http://localhost:3000/orders/1.json
+Get {{host}}/orders/1.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 ### Index all Orders
-Get http://localhost:3000/orders.json
+Get {{host}}/orders.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 ### Carted_Product Create
-POST http://localhost:3000/carted_products.json
+POST {{host}}/carted_products.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
@@ -105,12 +108,12 @@ Content-Type: application/json
 }
 
 ### Index all CartedProducts
-Get http://localhost:3000/carted_products.json
+Get {{host}}/carted_products.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 ### Update a CartedProduct 
-patch http://localhost:3000/carted_products/3.json
+patch {{host}}/carted_products/3.json
 Content-Type: application/json
 
 {
@@ -118,6 +121,6 @@ Content-Type: application/json
 }
 
 ### Delete CartedProducts
-delete http://localhost:3000/carted_products/14.json
+delete {{host}}/carted_products/14.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
